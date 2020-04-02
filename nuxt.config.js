@@ -15,7 +15,7 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script:[{
-      src:'/js/screen.js'
+      src:'js/screen.js'
     }]
   },
   /*
@@ -27,20 +27,16 @@ module.exports = {
   */
   css: [
     'element-ui/lib/theme-chalk/index.css',
-    {
-      src:'@/assets/style/var.less',
-      lang:'less'
-    },
-    {
-      src:'@/assets/style/common.less',
-      lang:'less'
-    }
+    '@/assets/style/vars.less',
+    '@/assets/style/common.less'
+    
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/vux-ui'
   ],
   /*
   ** Nuxt.js dev-modules
@@ -55,6 +51,12 @@ module.exports = {
   /*
   ** Build configuration
   */
+  loader:[
+    {
+        test:/\.less$/,
+        loaders:'style-loader!css-loader!less-loader'
+    }
+  ],
   build: {
     transpile: [/^element-ui/],
     /*
