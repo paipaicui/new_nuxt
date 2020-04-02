@@ -13,7 +13,10 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script:[{
+      src:'/js/screen.js'
+    }]
   },
   /*
   ** Customize the progress-bar color
@@ -23,7 +26,15 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'element-ui/lib/theme-chalk/index.css'
+    'element-ui/lib/theme-chalk/index.css',
+    {
+      src:'@/assets/style/var.less',
+      lang:'less'
+    },
+    {
+      src:'@/assets/style/common.less',
+      lang:'less'
+    }
   ],
   /*
   ** Plugins to load before mounting the App
